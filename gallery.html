@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Image Gallery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+<h1>My Image Gallery</h1>
+<p>Explore beautiful photos by category</p>
+</header>
+
+ <!-- Filter Buttons - Flexbox -->
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="landscapes">Landscapes</button>
+    <button class="filter-btn" data-filter="portraits">Portraits</button>
+    <button class="filter-btn" data-filter="architecture">Architecture</button>
+  </div>
+
+  <!-- Gallery Grid - CSS Grid -->
+  <main class="gallery">
+
+   <!-- LANDSCAPES -->
+   <article class="card landscapes">
+      <img src="https://picsum.photos/seed/mountain1/600/400" alt="Mountain View">
+      <span class="tag">Landscape</span>
+      <div class="card-info"><h3>Mountain View</h3></div>
+      <div class="overlay"><p>Peaceful mountains at sunrise with mist rolling over the peaks.</p></div>
+    </article>
+
+    <article class="card landscapes">
+     <img src="https://picsum.photos/seed/ocean1/600/400" alt="Ocean Sunset">
+     <span class="tag">Landscape</span>
+     <div class="card-info"><h3>Ocean Sunset</h3></div>
+     <div class="overlay"><p>Golden sunset over calm ocean waves.</p></div>
+    </article>
+
+   <article class="card landscapes">
+     <img src="https://picsum.photos/seed/forest1/600/400" alt="Green Forest">
+     <span class="tag">Landscape</span>
+     <div class="card-info"><h3>Green Forest</h3></div>
+     <div class="overlay"><p>Tall trees and fresh air in a deep green forest.</p></div>
+    </article>
+
+   <article class="card landscapes">
+     <img src="https://picsum.photos/seed/lake1/600/400" alt="Calm Lake">
+     <span class="tag">Landscape</span>
+      <div class="card-info"><h3>Calm Lake</h3></div>
+       <div class="overlay"><p>A still lake reflecting the sky and mountains.</p></div>
+    </article>
+
+  <!-- PORTRAITS -->
+    <article class="card portraits">
+    <img src="https://picsum.photos/seed/person1/600/400" alt="Smiling Girl">
+    <span class="tag">Portrait</span>
+     <div class="card-info"><h3>Smiling Girl</h3></div>
+      <div class="overlay"><p>A natural portrait full of joy and confidence.</p></div>
+    </article>
+
+    <article class="card portraits">
+      <img src="https://picsum.photos/seed/person2/600/400" alt="Young Man">
+      <span class="tag">Portrait</span>
+      <div class="card-info"><h3>Young Man</h3></div>
+      <div class="overlay"><p>A thoughtful portrait in soft daylight.</p></div>
+    </article>
+
+  <article class="card portraits">
+      <img src="https://picsum.photos/seed/person3/600/400" alt="Woman Portrait">
+      <span class="tag">Portrait</span>
+      <div class="card-info"><h3>Woman Portrait</h3></div>
+      <div class="overlay"><p>Elegant portrait with warm tones.</p></div>
+    </article>
+
+    <article class="card portraits">
+      <img src="https://picsum.photos/seed/person4/600/400" alt="Child Smile">
+      <span class="tag">Portrait</span>
+      <div class="card-info"><h3>Child Smile</h3></div>
+      <div class="overlay"><p>A happy moment captured forever.</p></div>
+    </article>
+
+   <!-- ARCHITECTURE -->
+   <article class="card architecture">
+      <img src="https://picsum.photos/seed/building1/600/400" alt="City Tower">
+      <span class="tag">Architecture</span>
+      <div class="card-info"><h3>City Tower</h3></div>
+      <div class="overlay"><p>Modern glass tower reaching into the sky.</p></div>
+    </article>
+
+    <article class="card architecture">
+      <img src="https://picsum.photos/seed/building2/600/400" alt="Old Bridge">
+      <span class="tag">Architecture</span>
+      <div class="card-info"><h3>Old Bridge</h3></div>
+      <div class="overlay"><p>Historic stone bridge over a quiet river.</p></div>
+    </article>
+
+    <article class="card architecture">
+      <img src="https://picsum.photos/seed/building3/600/400" alt="White House">
+      <span class="tag">Architecture</span>
+      <div class="card-info"><h3>White House</h3></div>
+      <div class="overlay"><p>Clean white building with classic design.</p></div>
+    </article>
+
+    <article class="card architecture">
+      <img src="https://picsum.photos/seed/building4/600/400" alt="Modern Home">
+      <span class="tag">Architecture</span>
+      <div class="card-info"><h3>Modern Home</h3></div>
+      <div class="overlay"><p>Minimal home with large windows and light.</p></div>
+    </article>
+
+   </main>
+
+<script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.card');
+  buttons.forEach(btn => {
+   btn.addEventListener('click', () => {
+    buttons.forEach(b => b.classList.remove('active'));
+     btn.classList.add('active');
+     const filter = btn.dataset.filter;
+     cards.forEach(card => {
+       if (filter === 'all' || card.classList.contains(filter)) {
+         card.classList.remove('hide');
+        } else {
+          card.classList.add('hide');
+     }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
+Make a note of something
